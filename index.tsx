@@ -26,9 +26,8 @@ import {
   Briefcase,
   Heart
 } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Note: GoogleGenAI removed from client bundle to avoid exposing API keys in browser.
+// The AI chat uses local/mock responses in `AIChat` component.
 
 const STUDENT_INFO = {
   name: "Nisa Naz KORKMAZ",
