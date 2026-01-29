@@ -4,15 +4,14 @@
 
 # Nisa Naz Korkmaz | Portfolio
 
-Samsun Üniversitesi Yazılım Mühendisliği öğrencisinin, Yapay Zekâ ve Görüntü İşleme alanında akademik araştırmaları ve projelerini sergilemek üzere geliştirilmiş modern portfolio web uygulaması.
+Samsun Üniversitesi Yazılım Mühendisliği öğrencisinin akademik araştırmaları ve projelerini sergilemek üzere geliştirilmiş bir portfolio web uygulaması.
 
 ## 🎯 Proje Hakkında
 
-Bu portfolio uygulaması, TÜSEB ve TÜBİTAK destekli araştırma projelerini, akademik deneyimleri ve gönüllü faaliyetleri profesyonel bir şekilde sunmaktadır. React ve TypeScript ile geliştirilmiş, Tailwind CSS ile stillendirilmiş ve Google Gemini AI entegrasyonu içeren modern bir web arayüzüne sahiptir.
+Bu portfolio uygulaması, akademik deneyimleri ve gönüllü faaliyetleri profesyonel bir şekilde sunmaktadır. React ve TypeScript ile geliştirilmiş, Tailwind CSS ile stillendirilmiştir.
 
 **Öne Çıkan Özellikler:**
 - 📋 İnteraktif CV görüntüleme ve PDF'e kaydetme
-- 🤖 AI-destekli preset sohbet botu (mock verilerle)
 - 🎨 Responsive ve karanlık tema tasarım
 - ⚡ Vite ile optimize edilmiş performans
 - 🔗 GitHub ve Medium entegrasyonu
@@ -33,13 +32,7 @@ Bu portfolio uygulaması, TÜSEB ve TÜBİTAK destekli araştırma projelerini, 
 npm install
 ```
 
-### Adım 2: Çevre Değişkenlerini Ayarla
-`.env.local` dosyasında `GEMINI_API_KEY` değerini ayarla:
-```
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
-```
-
-### Adım 3: Uygulamayı Çalıştır
+### Adım 2: Uygulamayı Çalıştır
 ```bash
 npm run dev
 ```
@@ -74,19 +67,17 @@ npm run build
 - **CV İndirme:** Tarayıcının yazdır/PDF kaydet özelliğini kullanarak PDF oluşturabilirsiniz.
 - **Responsive Design:** Tüm cihazlar için optimize edilmiştir.
 
+- Google Ai Studio
+- GitHub Copilot (Kod yardımcı)
+kullanılmıştır.
+
 ## 👤 Geliştirici
 
 **Nisa Naz Korkmaz**
 - 📧 Email: korkmazn934@gmail.com
 - 🔗 GitHub: [@nisakrkmz](https://github.com/nisakrkmz)
 - 💼 LinkedIn: [Nisa Naz Korkmaz](https://www.linkedin.com/in/nisa-naz-korkmaz-35bba1285/)
-
-## 🙏 Teşekkürler
-
-- Google Gemini AI API
-- GitHub Copilot (Kod yardımcı)
-- Tailwind CSS Framework
-- React Ekibi
+  
 
 ## 📄 Lisans
 
