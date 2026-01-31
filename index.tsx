@@ -89,8 +89,9 @@ const STUDENT_INFO = {
       title: "TÜSEB Dijital Tabanlı Ağız Kanseri Tanı Sistemi",
       role: "Bursiyer",
       date: "Ocak 2025 - Temmuz 2025",
-      description: "İntraoral ve histopatolojik görüntülerle ağız kanserinin erken teşhisini hedefleyen yapay zekâ destekli uzman sistem platformu geliştirilmesi.",
-      tech: ["Yapay Zeka", "Tıbbi Görüntü İşleme", "Python"]
+      description: "İntraoral ve histopatolojik görüntülerle ağız kanserinin erken teşhisini hedefleyen yapay zekâ destekli uzman sistem platformu geliştirilmesi. Proje kapsamında geliştirilmesinde rol aldığım bir web sitesi de bulunmaktadır.",
+      tech: ["Yapay Zeka", "Tıbbi Görüntü İşleme", "Python"],
+      link: "https://oralhealth-ai.com/"
     },
     {
       id: "tubitak-1",
@@ -346,7 +347,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const repoRes = await fetch(`https://api.github.com/users/nisakrkmz/repos?sort=updated&per_page=6`);
+        const repoRes = await fetch(`https://api.github.com/users/nisakrkmz/repos?sort=updated&per_page=2`);
         const repoData = await repoRes.json();
         setRepos(Array.isArray(repoData) ? repoData : []);
 
@@ -445,6 +446,11 @@ function App() {
                 <p className="text-slate-200 text-lg mb-12 leading-relaxed font-bold italic border-l-8 border-indigo-500 pl-8 bg-indigo-500/5 py-6 rounded-r-3xl">
                   {proj.description}
                 </p>
+                {(proj as any).link && (
+                  <a href={(proj as any).link} target="_blank" className="text-white hover:bg-indigo-500 flex items-center gap-4 text-xs font-black bg-slate-700 px-8 py-4 rounded-3xl transition-all border border-white/10 uppercase tracking-widest shadow-2xl">
+                    Siteyi Ziyaret Et <ExternalLink size={20} />
+                  </a>
+                )}
                 <div className="flex flex-wrap gap-4">
                   {proj.tech.map(t => (
                     <span key={t} className="text-[12px] font-black px-5 py-2.5 bg-slate-900 text-slate-400 font-mono rounded-2xl uppercase tracking-widest">{t}</span>
@@ -501,11 +507,11 @@ function App() {
           </div>
           
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {[1, 2, 3].map(i => <div key={i} className="h-80 bg-slate-700/50 rounded-[4rem] animate-pulse"></div>)}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {[1, 2].map(i => <div key={i} className="h-80 bg-slate-700/50 rounded-[4rem] animate-pulse"></div>)}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {repos.filter(r => !r.fork).map(repo => (
                 <a 
                   key={repo.id} 
@@ -517,16 +523,10 @@ function App() {
                     <div className="p-5 bg-indigo-500/20 rounded-[1.5rem] text-indigo-300 group-hover:scale-110 transition-transform shadow-lg">
                       <Code2 size={32} />
                     </div>
-                    <div className="flex items-center gap-4 text-[11px] font-black font-mono text-slate-400 uppercase tracking-widest">
-                      <span>{repo.language || "Docs"}</span>
-                    </div>
                   </div>
                   <h3 className="text-2xl font-black mb-6 group-hover:text-white transition-colors capitalize text-slate-200 leading-tight">
                     {repo.name.replace(/-/g, ' ')}
                   </h3>
-                  <p className="text-slate-400 text-base mb-12 line-clamp-3 leading-relaxed font-bold italic">
-                    {repo.description || "Bu proje üzerinde çalışmalar tüm hızıyla devam ediyor..."}
-                  </p>
                   <div className="mt-auto pt-10 border-t border-white/5 flex items-center justify-between text-[11px] font-black uppercase tracking-widest text-slate-500">
                     <span>{new Date(repo.updated_at).getFullYear()}</span>
                     <span className="flex items-center gap-3 group-hover:text-indigo-300 transition-all">Projeyi İncele <ChevronRight size={20} /></span>
@@ -547,7 +547,7 @@ function App() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {posts.slice(0, 4).map((post, idx) => (
+            {posts.slice(0, 2).map((post, idx) => (
               <a 
                 key={idx} 
                 href={post.link}
