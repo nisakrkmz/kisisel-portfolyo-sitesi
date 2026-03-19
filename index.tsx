@@ -74,13 +74,15 @@ const STUDENT_INFO = {
       date: "Kasım 2025",
       title: "Keşif Kampüsü",
       description: "Gönüllü eğitmenlik, atölye çalışmaları ve mini dersler ile genç yeteneklerin gelişimine katkı.",
-      icon: <Heart size={20} />
+      icon: <Heart size={20} />,
+      link: "/kesif_kampusu_sertifika.jpg"
     },
     {
       date: "Günümüz",
       title: "SAMÜ Yazılım ve İnovasyon Kulübü",
       description: "Başkan Yardımcısı olarak çeşitli projelerin koordinasyonu ve yönetim süreçleri.",
-      icon: <Users size={20} />
+      icon: <Users size={20} />,
+      link: "https://www.linkedin.com/in/yazilimveinovasyon/"
     }
   ],
   researchProjects: [
@@ -475,7 +477,10 @@ function App() {
             {timelineData.map((item, idx) => (
               <div key={idx} className={`flex items-center gap-16 mb-24 group ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col`}>
                 <div className={`flex-1 text-right w-full ${idx % 2 === 0 ? 'md:text-right text-left' : 'md:text-left text-left'}`}>
-                  <div className="p-10 bg-slate-700/40 border border-white/5 rounded-[3.5rem] group-hover:border-indigo-500/40 transition-all hover:bg-slate-700/60 shadow-2xl">
+                  <div 
+                    onClick={() => (item as any).link && window.open((item as any).link, '_blank')}
+                    className={`p-10 bg-slate-700/40 border border-white/5 rounded-[3.5rem] group-hover:border-indigo-500/40 transition-all hover:bg-slate-700/60 shadow-2xl ${(item as any).link ? 'cursor-pointer hover:translate-y-[-8px]' : ''}`}
+                  >
                     <span className="text-indigo-300 text-sm font-black mb-4 block uppercase tracking-[0.3em]">{item.date}</span>
                     <h3 className="text-3xl font-black mb-4 text-white leading-none">{item.title}</h3>
                     <p className="text-slate-200 text-base font-bold italic leading-relaxed opacity-80">{item.description}</p>
