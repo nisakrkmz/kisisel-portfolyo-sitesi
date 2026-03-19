@@ -75,7 +75,7 @@ const STUDENT_INFO = {
       title: "Keşif Kampüsü",
       description: "Gönüllü eğitmenlik, atölye çalışmaları ve mini dersler ile genç yeteneklerin gelişimine katkı.",
       icon: <Heart size={20} />,
-      link: "/kesif_kampusu_sertifika.jpg"
+      link: "/kisisel-portfolyo-sitesi/kesif_kampusu_sertifika.jpg"
     },
     {
       date: "Günümüz",
