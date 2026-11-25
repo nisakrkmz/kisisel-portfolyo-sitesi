@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ExternalLink, 
-  BookOpen, 
-  Code2, 
-  Send, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  BookOpen,
+  Code2,
+  Send,
   ChevronRight,
   Terminal,
   Cpu,
@@ -31,27 +31,27 @@ import {
 
 const STUDENT_INFO = {
   name: "Nisa Naz KORKMAZ",
-  title: "Bilgisayar Mühendisliği Öğrencisi & Araştırmacı",
-  location: "Samsun, Türkiye",
+  title: "Yazılım Mühendisliği Öğrencisi & Araştırmacı",
+  location: "Sinop, Türkiye",
   phone: "+90 543 767 5040",
-  email: "korkmazn934@gmail.com",
-  bio: "Doğal Dil İşleme (NLP) ve Makine Öğrenmesi alanında uzmanlaşmayı hedefleyen bir Yazılım Mühendisliği öğrencisiyim. C# ve Python dillerinde akademik projeler ve TÜBİTAK/TÜSEB destekli araştırmalarla deneyim kazanıyorum.",
+  email: "nisakrkmz05@gmail.com",
+  bio: "Yazılım Mühendisliği lisans öğrencisi olarak backend geliştirme ve yapay zekâ alanlarında projeler geliştiriyorum. TÜBİTAK ve TÜSEB destekli Ar-Ge projelerinde araştırmacı ve bursiyer olarak görev aldım; Etiya bünyesinde backend geliştirme ve DevOps süreçlerinde staj deneyimi kazandım.",
   socials: {
     github: "https://github.com/nisakrkmz",
     linkedin: "https://www.linkedin.com/in/nisa-naz-korkmaz-35bba1285/",
     medium: "https://medium.com/@nisanaz",
   },
   skills: {
-    languages: ["Python", "C#"],
-    technologies: ["Visual Studio", "Kaggle", "Google Colab", "Roboflow", "OpenCV", "Git", "GitHub", ".NET Framework"],
+    languages: ["Java", "Python", "C#"],
+    technologies: ["Spring Boot", "Quarkus", "REST API", "Apache Kafka", "RabbitMQ", "Docker", "Kubernetes", "OpenCV", "Roboflow", "Swagger", "Postman", "Git"],
     softSkills: ["Problem Çözme", "Ekip Çalışması", "Algoritmik Düşünme", "Veri Analizi"],
     interests: ["Yapay Zekâ", "Doğal Dil İşleme", "Makine Öğrenimi", "Veri Bilimi"]
   },
   experience: [
     {
-      date: "Temmuz 2025",
-      title: "Stajyer | Samsun Üniversitesi",
-      description: "TEKNOFEST projesinde veri seti hazırlama, etiketleme ve proje sunumu süreçlerinde aktif rol. TÜSEB destekli projede ağız hastalıkları veri analizi ve nesne tespiti modellemeleri.",
+      date: "Temmuz 2026 - Ağustos 2026",
+      title: "Software Developer Intern | Etiya",
+      description: "İstanbul'daki Etiya'da 30 günlük zorunlu staj kapsamında Java, Spring Boot ve Quarkus ile mikroservis mimarisi geliştirdim. Apache Kafka ve RabbitMQ tabanlı asenkron mesajlaşma ile Docker ve Kubernetes DevOps süreçlerinde görev aldım.",
       icon: <Briefcase size={20} />
     }
   ],
@@ -71,21 +71,29 @@ const STUDENT_INFO = {
   ],
   volunteering: [
     {
-      date: "Kasım 2025",
-      title: "Keşif Kampüsü",
-      description: "Gönüllü eğitmenlik, atölye çalışmaları ve mini dersler ile genç yeteneklerin gelişimine katkı.",
+      date: "Günümüz",
+      title: "Samsun Keşif Kampüsü - Gönüllü Eğitmen",
+      description: "5-6. sınıf öğrencilerine yönelik teknoloji atölyelerinde eğitmenlik yaptım. Köy okulu ziyaretleri kapsamında farklı sosyo-ekonomik koşullardaki öğrencilerle teknoloji temelli etkinlikler gerçekleştirdim.",
       icon: <Heart size={20} />,
       link: "/kisisel-portfolyo-sitesi/kesif_kampusu_sertifika.jpg"
     },
     {
       date: "Günümüz",
-      title: "SAMÜ Yazılım ve İnovasyon Kulübü",
-      description: "Başkan Yardımcısı olarak çeşitli projelerin koordinasyonu ve yönetim süreçleri.",
+      title: "SAMÜ Yazılım ve İnovasyon Kulübü - Başkan",
+      description: "Kulüp başkanı olarak çeşitli teknoloji projelerinin yürütülmesine liderlik ediyor; kulüp etkinliklerinin koordinasyonunu sağlıyorum.",
       icon: <Users size={20} />,
       link: "https://www.linkedin.com/in/yazilimveinovasyon/"
     }
   ],
   researchProjects: [
+    {
+      id: "tubitak-1001",
+      title: "TÜBİTAK 1001 - Akıllı İzleme ve Arıza Kontrolü",
+      role: "Bursiyer",
+      date: "Mayıs 2026 - Devam Ediyor",
+      description: "Elektrik dağıtım hatlarının İHA ile izlenmesi ve arıza tespitine yönelik yapay zekâ destekli sistem geliştirme çalışmalarına katkı sağlıyorum.",
+      tech: ["Yapay Zeka", "İHA", "Görüntü İşleme"]
+    },
     {
       id: "tuseb-1",
       title: "TÜSEB Dijital Tabanlı Ağız Kanseri Tanı Sistemi",
@@ -120,7 +128,7 @@ const Header = ({ onViewCV }: { onViewCV: () => void }) => (
         <a href="#writing" className="hover:text-white transition-all hover:translate-y-[-2px]">Yazılar</a>
       </nav>
       <div className="flex items-center space-x-3">
-        <button 
+        <button
           onClick={onViewCV}
           className="flex items-center gap-2 px-6 py-2.5 bg-indigo-500 hover:bg-indigo-400 rounded-xl text-xs font-black transition-all shadow-xl shadow-indigo-500/20 text-white"
         >
@@ -184,7 +192,7 @@ const CVModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) 
             </button>
           </div>
         </div>
-        
+
         <div id="cv-print-area" className="p-12 md:p-20">
           <div className="border-b-[10px] border-indigo-600 pb-10 mb-12">
             <h1 className="text-5xl font-black uppercase tracking-tighter mb-5 text-slate-900 leading-none">{STUDENT_INFO.name}</h1>
@@ -280,14 +288,14 @@ const AIChat = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Preset questions and third-person answers
-  const PRESET: {label: string; answer: string}[] = [
+  const PRESET: { label: string; answer: string }[] = [
     { label: 'Nisa kaç yaşında?', answer: 'Nisa 20 yaşında.' },
-    { label: 'Nisa nerede yaşıyor?', answer: 'Nisa Samsun’da yaşıyor.' },
+    { label: 'Nisa nerede yaşıyor?', answer: 'Nisa’nın CV bilgilerine göre eğitim ve proje çalışmaları Samsun odaklıdır; memleketi Sinop’tur.' },
     { label: 'Nisa ne okuyor?', answer: 'Nisa, Samsun Üniversitesi’nde Yazılım Mühendisliği 3. sınıf öğrencisi.' },
-    { label: 'Projeleri nelerdir?', answer: 'Nisa’nın projeleri: TÜSEB Ağız Kanseri Tanı Sistemi ve TÜBİTAK 2209-A Afet Bölgelerinde Risk Haritalama.' }
+    { label: 'Projeleri nelerdir?', answer: 'Nisa’nın projeleri; TÜBİTAK 1001 akıllı enerji hattı izleme, TÜSEB ağız kanseri tanı sistemi ve TÜBİTAK 2209-A afet risk haritalama çalışmalarını kapsıyor.' }
   ];
 
-  const [messages, setMessages] = useState<{role: 'user' | 'ai', content: string}[]>([
+  const [messages, setMessages] = useState<{ role: 'user' | 'ai', content: string }[]>([
     { role: 'ai', content: "Merhaba — aşağıdaki sorulardan birini seçerek Nisa hakkında bilgi alabilirsin." }
   ]);
 
@@ -388,7 +396,7 @@ function App() {
     <div className="min-h-screen bg-slate-800 text-slate-100 selection:bg-indigo-500/30 font-sans transition-all duration-700">
       <Header onViewCV={() => setIsCVOpen(true)} />
       <CVModal isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
-      
+
       {/* Hero Section */}
       <section id="about" className="pt-48 pb-40 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -406,7 +414,7 @@ function App() {
               Samsun Üniversitesi Yazılım Mühendisliği öğrencisiyim. Akademik çalışmalarımda özellikle Yapay Zekâ ve Görüntü İşleme alanlarında çözüm odaklı projeler geliştiriyorum.
             </p>
             <div className="flex flex-wrap gap-8">
-              <button 
+              <button
                 onClick={() => setIsCVOpen(true)}
                 className="px-12 py-6 bg-indigo-500 hover:bg-indigo-400 rounded-3xl font-black transition-all shadow-2xl shadow-indigo-500/40 flex items-center gap-4 text-white hover:translate-y-[-4px] active:scale-95"
               >
@@ -418,7 +426,7 @@ function App() {
               </div>
             </div>
           </div>
-          
+
           <div className="relative lg:block hidden">
             <div className="absolute -inset-24 bg-indigo-400/10 rounded-full blur-[140px] animate-pulse"></div>
             <AIChat />
@@ -434,7 +442,7 @@ function App() {
             <div className="w-24 h-2 bg-indigo-500 mx-auto rounded-full mb-8"></div>
             <p className="text-slate-300 text-xl font-bold italic">Sağlık ve afet yönetimi odaklı yenilikçi projeler.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {STUDENT_INFO.researchProjects.map(proj => (
               <div key={proj.id} className="p-12 bg-slate-700/50 border border-white/10 rounded-[4rem] hover:bg-slate-700 hover:border-indigo-500/50 transition-all group shadow-3xl relative overflow-hidden">
@@ -471,13 +479,13 @@ function App() {
             <h2 className="text-6xl font-black mb-8 tracking-tight">Gelişim Yolculuğum</h2>
             <p className="text-slate-300 text-xl font-bold italic">Adım adım teknoloji dünyasında bıraktığım izler.</p>
           </div>
-          
+
           <div className="relative">
             <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-slate-700 -translate-x-1/2 hidden md:block rounded-full"></div>
             {timelineData.map((item, idx) => (
               <div key={idx} className={`flex items-center gap-16 mb-24 group ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col`}>
                 <div className={`flex-1 text-right w-full ${idx % 2 === 0 ? 'md:text-right text-left' : 'md:text-left text-left'}`}>
-                  <div 
+                  <div
                     onClick={() => (item as any).link && window.open((item as any).link, '_blank')}
                     className={`p-10 bg-slate-700/40 border border-white/5 rounded-[3.5rem] group-hover:border-indigo-500/40 transition-all hover:bg-slate-700/60 shadow-2xl ${(item as any).link ? 'cursor-pointer hover:translate-y-[-8px]' : ''}`}
                   >
@@ -510,7 +518,7 @@ function App() {
               GitHub Profili <ExternalLink size={20} />
             </a>
           </div>
-          
+
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {[1, 2].map(i => <div key={i} className="h-80 bg-slate-700/50 rounded-[4rem] animate-pulse"></div>)}
@@ -518,8 +526,8 @@ function App() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {repos.filter(r => !r.fork).map(repo => (
-                <a 
-                  key={repo.id} 
+                <a
+                  key={repo.id}
                   href={repo.html_url}
                   target="_blank"
                   className="group relative bg-slate-700/40 border border-white/5 rounded-[4rem] p-12 hover:bg-slate-700 hover:border-indigo-500/60 transition-all flex flex-col h-full hover:translate-y-[-12px] shadow-3xl"
@@ -550,11 +558,11 @@ function App() {
             <h2 className="text-6xl font-black mb-8 tracking-tight">Medium Yazılarım</h2>
             <p className="text-slate-300 text-xl font-bold italic">Teknik bilgi birikimimi paylaştığım dijital notlar.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {posts.slice(0, 2).map((post, idx) => (
-              <a 
-                key={idx} 
+              <a
+                key={idx}
                 href={post.link}
                 target="_blank"
                 className="flex flex-col md:flex-row gap-10 p-12 bg-slate-700/30 border border-white/5 rounded-[4.5rem] hover:border-indigo-500/50 hover:bg-slate-700/60 transition-all group relative overflow-hidden shadow-3xl"
@@ -586,24 +594,24 @@ function App() {
       <footer className="py-40 border-t border-white/5 bg-slate-900/50">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-24">
-             <h2 className="text-7xl font-black mb-12 tracking-tighter text-white leading-none">Bağlantıda Kalalım</h2>
-             <p className="text-slate-300 max-w-2xl mx-auto mb-16 text-2xl font-bold italic leading-relaxed opacity-80">
-                Yapay zekâ, akademik araştırmalar veya iş birliği için bir mail uzağınızdayım.
-             </p>
-             <div className="flex justify-center gap-10">
-                <a href={`mailto:${STUDENT_INFO.email}`} className="w-24 h-24 bg-slate-800 border border-white/10 rounded-[2.5rem] flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-400 transition-all hover:translate-y-[-8px] text-white shadow-3xl">
-                  <Mail size={40} />
-                </a>
-                <a href={STUDENT_INFO.socials.linkedin} target="_blank" className="w-24 h-24 bg-slate-800 border border-white/10 rounded-[2.5rem] flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-400 transition-all hover:translate-y-[-8px] text-white shadow-3xl">
-                  <Linkedin size={40} />
-                </a>
-                <a href={STUDENT_INFO.socials.github} target="_blank" className="w-24 h-24 bg-slate-800 border border-white/10 rounded-[2.5rem] flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-400 transition-all hover:translate-y-[-8px] text-white shadow-3xl">
-                  <Github size={40} />
-                </a>
-             </div>
+            <h2 className="text-7xl font-black mb-12 tracking-tighter text-white leading-none">Bağlantıda Kalalım</h2>
+            <p className="text-slate-300 max-w-2xl mx-auto mb-16 text-2xl font-bold italic leading-relaxed opacity-80">
+              Yapay zekâ, akademik araştırmalar veya iş birliği için bir mail uzağınızdayım.
+            </p>
+            <div className="flex justify-center gap-10">
+              <a href={`mailto:${STUDENT_INFO.email}`} className="w-24 h-24 bg-slate-800 border border-white/10 rounded-[2.5rem] flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-400 transition-all hover:translate-y-[-8px] text-white shadow-3xl">
+                <Mail size={40} />
+              </a>
+              <a href={STUDENT_INFO.socials.linkedin} target="_blank" className="w-24 h-24 bg-slate-800 border border-white/10 rounded-[2.5rem] flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-400 transition-all hover:translate-y-[-8px] text-white shadow-3xl">
+                <Linkedin size={40} />
+              </a>
+              <a href={STUDENT_INFO.socials.github} target="_blank" className="w-24 h-24 bg-slate-800 border border-white/10 rounded-[2.5rem] flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-400 transition-all hover:translate-y-[-8px] text-white shadow-3xl">
+                <Github size={40} />
+              </a>
+            </div>
           </div>
           <div className="pt-20 border-t border-white/5 text-slate-500 text-[12px] font-black uppercase tracking-[0.4em]">
-             {STUDENT_INFO.name} • {new Date().getFullYear()}
+            {STUDENT_INFO.name} • {new Date().getFullYear()}
           </div>
         </div>
       </footer>
